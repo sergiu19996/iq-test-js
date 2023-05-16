@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Changa+One&family=Noto+Serif+Khojki:wght@600&family=Roboto:wght@300&display=swap');
+
+ body {
+    font-family:'Changa One', cursive;   
+    text-align: center;
+    border: 5px solid black;
+    font-size: 50px;
+    letter-spacing: 3px; 
+ }
+ 
+ #option-container {
+    padding-right: 490px;
+    padding-top: 42px;
+ }
+ 
+ #submit-btn {
+   display: block;
+   width: 100%; 
+   font-size: 20px;
+   border: none;
+ }

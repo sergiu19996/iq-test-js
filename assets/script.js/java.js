@@ -81,6 +81,8 @@ const quizData = [
       score ++;
     } 
   }
+  
+
 
   // disable options after selection
   const options = optionContainer.getElementsByClassName("option");

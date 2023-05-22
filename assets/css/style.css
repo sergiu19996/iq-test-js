@@ -6,16 +6,42 @@
     border: 5px solid black;
     font-size: 50px;
     letter-spacing: 3px; 
+    display: block;
+    width: 1050px;
+    margin: 3px;
  }
  
  #option-container {
-    padding-right: 490px;
-    padding-top: 42px;
+    width: 100%;
  }
  
  #submit-btn {
-   display: block;
-   width: 100%; 
+   width: 30%; 
    font-size: 20px;
    border: none;
+   padding: 1.2rem;
+   background-color: rgb(0, 0, 9);
+   color: #fff;
+   cursor: pointer;
  }
+ #submit-btn:hover{
+   color: #fff;
+   background-color: #0700009c;
+ }
+ .again {
+   border: none;
+   font-size: 25px;
+   width: 30%;
+   text-align: center;
+   color: #fff;
+   background-color: black;
+   padding-left: 12px;
+
+ }
+ .again:hover{
+   color: #fff;
+   background-color: #0700009c;
+ }
+ 
+ 
+ 

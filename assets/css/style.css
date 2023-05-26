@@ -12,7 +12,18 @@
  }
  
  #option-container {
-    width: 100%;
+    width: auto;
+    border: 12px solid black;
+    margin: 20px;
+ }
+ 
+ .option{
+  border: 2px solid black; 
+ }
+ .option:hover{
+  color: #fff;
+  background-color: black;
+  cursor: pointer;
  }
  
  #submit-btn {

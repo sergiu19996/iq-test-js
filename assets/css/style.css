@@ -11,6 +11,9 @@
     margin: 3px;
  }
  
+ @media (max-width: 300px)
+  
+ 
  #option-container {
     width: auto;
     border: 12px solid black;

@@ -8,10 +8,12 @@
     letter-spacing: 3px; 
     display: block;
     width: 1050px;
-    margin: 3px;
+    margin: auto;
  }
  
- @media (max-width: 300px)
+ @media (max-width: 300px) {
+  body
+ }
   
  
  #option-container {
@@ -57,5 +59,19 @@
    background-color: #0700009c;
  }
  
- 
+ .scores{
+  display: inline;
+  margin: 5px;
+  letter-spacing: 2px;
+
+ }
+ #score{
+  margin-left: 15px;
+  color: green;
+ }
+
+ #incorrect {
+  margin-left: 15px;
+  color: red;
+ }
  

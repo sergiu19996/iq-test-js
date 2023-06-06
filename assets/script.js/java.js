@@ -81,7 +81,16 @@ function selectOption(optionIndex) {
   // move on to the next question
   showNextQuestion();
 }
+function incrementScore(){
+  let oldscore = parseInt(document.getElementById("score").innerText);
+  document.getElementById("score").innerText = ++oldscore;
+}
 
+function incrementWrongAnswer() {
+
+  let oldScore = parseInt(document.getElementById("incorrect").innerText);
+  document.getElementById("incorrect").innerText = ++oldScore;
+}
 // disable options after selection
 const options = optionContainer.getElementsByClassName("option");
 Array.from(options).forEach(option => {
@@ -98,6 +107,7 @@ function showNextQuestion() {
     showResult();
   }
 }
+
 /** 
 * This function is used at the end of the quiz to show the result.
 * We create a customised message that depends in thre score.
@@ -108,6 +118,7 @@ function showResult() {
   let message = "You really don't know very much...";
   if (score > 4 ) {
     message = "You did okay though some improvement would be good!"
+    incrementScore()
   }
   if (score > 7) {
     message = "You are a total egg head that was AMAZING!"

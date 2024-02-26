@@ -1,5 +1,4 @@
-const quizData = [
-  {
+const quizData = [{
     question: "What is the capital of France?",
     options: ["Paris", "Leon", "London", "Dublin"],
     answer: 0
@@ -36,7 +35,7 @@ const quizData = [
   },
   {
     question: "what is the place with the lowest temperatures on earth?",
-    options: ["Antarctic","Atlantis","Everest"],
+    options: ["Antarctic", "Atlantis", "Everest"],
     answer: 0
   },
   {
@@ -46,7 +45,7 @@ const quizData = [
   },
   {
     question: "in which city of united states the white house is?",
-    options: ["Washington","Los Angeles", "Miami", "New York"],
+    options: ["Washington", "Los Angeles", "Miami", "New York"],
     answer: 0
   },
 ];
@@ -54,12 +53,21 @@ const quizData = [
 const quizContainer = document.getElementById("quiz-container");
 const questionContainer = document.getElementById("question-container");
 const optionContainer = document.getElementById("option-container");
-// const submitButton = document.getElementById("submit-btn");
-const resultContainer = document.querySelector("#result-container");
+const resultContainer = document.getElementById("result-container");
+const correctScores = document.getElementById("correct");
+const incorrectScores = document.getElementById("incorrect");
 const restart = document.getElementById("again");
+
 let currentQuestion = 0;
 let score = 0;
+let correctScoresToPrint = 0;
+let incorrectScoresToPrint = 0;
+
+
 restart.style.visibility = "hidden";
+/**
+ * Describe each function
+ */
 function loadQuestion() {
   const currentQuizData = quizData[currentQuestion];
   questionContainer.innerText = currentQuizData.question;
@@ -72,34 +80,46 @@ function loadQuestion() {
     optionContainer.appendChild(optionElement);
   });
 }
+
 function selectOption(optionIndex) {
   const currentQuizData = quizData[currentQuestion];
   // if they answered correctly then we increase the score
   if (optionIndex === currentQuizData.answer) {
-    score ++;
-  } 
+    score++;
+    correctScoresToPrint++;
+    correctScores.innerHTML = correctScoresToPrint;
+  } else {
+    incorrectScoresToPrint++;
+    incorrectScores.innerHTML = incorrectScoresToPrint;
+  }
   // move on to the next question
   showNextQuestion();
 }
-function incrementScore(){
+
+function incrementScore() {
   let oldscore = parseInt(document.getElementById("score").innerText);
+  console.log(oldscore)
   document.getElementById("score").innerText = ++oldscore;
 }
 
 function incrementWrongAnswer() {
-
   let oldScore = parseInt(document.getElementById("incorrect").innerText);
   document.getElementById("incorrect").innerText = ++oldScore;
 }
+
+
 // disable options after selection
 const options = optionContainer.getElementsByClassName("option");
+
+
 Array.from(options).forEach(option => {
   option.removeEventListener("click", selectOption);
   option.classList.add("disabled");
 });
+
 function showNextQuestion() {
   // increment the current question counter
-  currentQuestion ++;
+  currentQuestion++;
   //check if we are at the end of the quiz
   if (currentQuestion < quizData.length) {
     loadQuestion();
@@ -108,15 +128,16 @@ function showNextQuestion() {
   }
 }
 
+
 /** 
-* This function is used at the end of the quiz to show the result.
-* We create a customised message that depends in thre score.
-* We show this message and make the restart button visible.
-*/
+ * This function is used at the end of the quiz to show the result.
+ * We create a customised message that depends in thre score.
+ * We show this message and make the restart button visible.
+ */
 function showResult() {
   quizContainer.style.display = "none";
   let message = "You really don't know very much...";
-  if (score > 4 ) {
+  if (score > 4) {
     message = "You did okay though some improvement would be good!"
     incrementScore()
   }
@@ -127,4 +148,5 @@ function showResult() {
   resultContainer.style.display = 'block';
   restart.style.visibility = 'visible';
 }
+
 loadQuestion();

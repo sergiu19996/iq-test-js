@@ -25,6 +25,7 @@ header {
   justify-content: center;
   width: 100%;
   background-color: coral;
+  font-size: 45px;
 }
 
 main {
@@ -45,6 +46,7 @@ footer {
   justify-content: center;
   width: 100%;
   background-color: coral;
+  font-size: 45px;
 }
 
 div#quiz-container {
@@ -90,17 +92,14 @@ div.score-area {
 .again {
   border: none;
   font-size: 25px;
-  width: 30%;
+  width: 100%;
   text-align: center;
   color: #fff;
   background-color: black;
   padding-left: 12px;
 }
 
-span#correct {
-  padding-left: 10px;
-  color: green;
-}
+
 
 .again:hover {
   color: #fff;
@@ -119,7 +118,13 @@ span#correct {
   color: green;
 }
 
+span#correct {
+  padding-left: 10px;
+  color: green;
+}
+
 #incorrect {
   margin-left: 15px;
   color: red;
 }
+

@@ -4,6 +4,8 @@
 # Efficiency and Accesibility
 -1.i was tested the site on Lighthouse and on another browsers like:chrome,firefox and safari
 ![lighthouse](https://github.com/sergiu19996/iq-test-js/assets/126587603/1d500b1c-dd7b-4f83-97d9-35224b5b91cc)
+![screencapture-8000-sergiu19996-iqtestjs-3lguc106sxx-ws-eu108-gitpod-io-2024-03-02-13_20_23](https://github.com/sergiu19996/iq-test-js/assets/126587603/fd1315e6-eb06-4f99-be32-b41dd3f563c5)
+
 
 ## HTML
 1.No errors were returned when passing through the official W3C
@@ -15,6 +17,15 @@
 
 # Features
 
+## Question 
+
+-Question Container it s created to show you a randomly question evry time you answer tho previos one 
+![1](https://github.com/sergiu19996/iq-test-js/assets/126587603/efe68f5e-3a75-448a-8af9-58a0030dff88)
+![2](https://github.com/sergiu19996/iq-test-js/assets/126587603/b7e57bd7-c847-4888-8fb5-4a2044a240a6)
+
+
+
+
 ## Option 
 1. Question Contaier is created like a box,very simply and you can use it very easly
 2. ![optiiuni](https://github.com/sergiu19996/iq-test-js/assets/126587603/f6c7493a-62e6-41ae-ad41-cedf5fccc7ff)
@@ -25,11 +36,6 @@
 
 ![main dashboarrd](https://github.com/sergiu19996/iq-test-js/assets/126587603/8c22c837-cd4f-4749-9b36-1b4180fc1e2b)
 
-## Question 
-
--Question Container it s created to show you a randomly question evry time you answer tho previos one 
-![1](https://github.com/sergiu19996/iq-test-js/assets/126587603/efe68f5e-3a75-448a-8af9-58a0030dff88)
-![2](https://github.com/sergiu19996/iq-test-js/assets/126587603/b7e57bd7-c847-4888-8fb5-4a2044a240a6)
 
 # Deployment
 
@@ -48,6 +54,13 @@ then push my local git repo to the external one using git push
 
 # Credits
 
-## Content
--Most of the code it was created from cours (Code institute cours) 
--And advices from my mentor 
+- Most of the code it was created from cours (Code institute cours) 
+- Advices from my mentor 
+
+# Bugs
+
+-I had problems with placing the codes, I hadn't put them in order
+  -Solution: replaced in a good order
+
+- also with CSS was having a problem gitpod didn t load up the command from style.css
+- Solution: Added Meta class

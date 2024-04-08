@@ -49,7 +49,8 @@ const quizData = [{
     answer: 0
   },
 ];
-// getters
+
+// Getters
 const quizContainer = document.getElementById("quiz-container");
 const questionContainer = document.getElementById("question-container");
 const optionContainer = document.getElementById("option-container");
@@ -63,10 +64,11 @@ let score = 0;
 let correctScoresToPrint = 0;
 let incorrectScoresToPrint = 0;
 
-
+// Hide the restart button initially
 restart.style.visibility = "hidden";
+
 /**
- * Describe each function
+ * Load the next question from the quiz data array
  */
 function loadQuestion() {
   const currentQuizData = quizData[currentQuestion];
@@ -81,9 +83,13 @@ function loadQuestion() {
   });
 }
 
+/**
+ * Handle the selection of an option
+ * @param {number} optionIndex The index of the selected option
+ */
 function selectOption(optionIndex) {
   const currentQuizData = quizData[currentQuestion];
-  // if they answered correctly then we increase the score
+  // Check if the selected option is correct and update score
   if (optionIndex === currentQuizData.answer) {
     score++;
     correctScoresToPrint++;
@@ -92,35 +98,33 @@ function selectOption(optionIndex) {
     incorrectScoresToPrint++;
     incorrectScores.innerHTML = incorrectScoresToPrint;
   }
-  // move on to the next question
+  // Move to the next question or show result
   showNextQuestion();
 }
 
+/**
+ * Increment the score and update the score display
+ */
 function incrementScore() {
   let oldscore = parseInt(document.getElementById("score").innerText);
-  console.log(oldscore)
   document.getElementById("score").innerText = ++oldscore;
 }
 
+/**
+ * Increment the count of wrong answers and update the display
+ */
 function incrementWrongAnswer() {
   let oldScore = parseInt(document.getElementById("incorrect").innerText);
   document.getElementById("incorrect").innerText = ++oldScore;
 }
 
-
-// disable options after selection
-const options = optionContainer.getElementsByClassName("option");
-
-
-Array.from(options).forEach(option => {
-  option.removeEventListener("click", selectOption);
-  option.classList.add("disabled");
-});
-
+/**
+ * Show the next question or result if all questions have been answered
+ */
 function showNextQuestion() {
-  // increment the current question counter
+  // Increment the current question counter
   currentQuestion++;
-  //check if we are at the end of the quiz
+  // Check if we are at the end of the quiz
   if (currentQuestion < quizData.length) {
     loadQuestion();
   } else {
@@ -128,25 +132,25 @@ function showNextQuestion() {
   }
 }
 
-
 /** 
- * This function is used at the end of the quiz to show the result.
- * We create a customised message that depends in thre score.
- * We show this message and make the restart button visible.
+ * Show the result of the quiz
  */
 function showResult() {
   quizContainer.style.display = "none";
   let message = "You really don't know very much...";
+  // Customize the message based on the score
   if (score > 4) {
-    message = "You did okay though some improvement would be good!"
-    incrementScore()
+    message = "You did okay though some improvement would be good!";
+    incrementScore();
   }
   if (score > 7) {
-    message = "You are a total egg head that was AMAZING!"
+    message = "You are a total egg head that was AMAZING!";
   }
+  // Display the result message and show the restart button
   resultContainer.innerText = `${message} You scored ${score} out of ${quizData.length}`;
   resultContainer.style.display = 'block';
   restart.style.visibility = 'visible';
 }
 
+// Load the first question when the page loads
 loadQuestion();
